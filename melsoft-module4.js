@@ -81,4 +81,34 @@ for (let attendee of attendees) {
   console.log(attendee.name + " spent R" + attendee.spend + " -> " + voucherMsg);
 }
 
+// Challenge 11: Closing-Time Countdown
+let countdown = 10;
+while (countdown >= 1) {
+  console.log("Festival closes in " + countdown + " minutes...");
+  if (countdown === 5) {
+    console.log("WARNING: LAST ENTRY HAS ENDED.");
+  }
+  if (countdown === 2) {
+    console.log("PLEASE PROCEED TO THE EXIT.");
+  }
+  countdown--;
+}
+console.log("FESTIVAL CLOSED");
+
+// Challenge 10: Venue Capacity
+let capacity = 5;
+let peopleInside = 0;
+for (let person of attendees) {
+  if (person.age >= 18 && person.hasTicket === true) {
+    peopleInside++;
+    console.log(person.name + " entered.");
+    console.log("People inside: " + peopleInside + "/" + capacity);
+    if (peopleInside === capacity) {
+      console.log("VENUE FULL");
+      console.log("STOP ADMITTING PEOPLE");
+      break;
+    }
+  }
+}
+
 
