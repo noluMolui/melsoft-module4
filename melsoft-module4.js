@@ -57,3 +57,28 @@ for (let person of attendees) {
     break;
   }
 }
+
+// Challenge 6: Security Fast Lane
+for (let person of attendees) {
+  if (person.hasTicket == false) {
+    continue;
+  }
+  console.log("Checking " + person.name + "...");
+}
+
+// Challenge 7: Food Voucher Rewards
+for (let attendee of attendees) {
+  let voucherMsg = "";
+  if (attendee.spend >= 1000) {
+    voucherMsg = "R200 food voucher";
+  } else if (attendee.spend >= 500) {
+    voucherMsg = "R100 food voucher";
+  } else if (attendee.spend >= 300) {
+    voucherMsg = "R50 food voucher";
+  } else {
+    voucherMsg = "No voucher";
+  }
+  console.log(attendee.name + " spent R" + attendee.spend + " -> " + voucherMsg);
+}
+
+
