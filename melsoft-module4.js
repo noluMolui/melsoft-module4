@@ -20,3 +20,40 @@ for (let attendee of attendees) {
     }
   }
 }
+// Challenge 3: Access Zones
+for (let i = 0; i < attendees.length; i++) {
+  let current = attendees[i];
+  let band = "";
+  switch (current.ticket) {
+    case "VIP":
+      band = "GOLD WRISTBAND";
+      break;
+    case "General":
+      band = "BLUE WRISTBAND";
+      break;
+    default:
+      band = "UNKNOWN TICKET TYPE";
+  }
+  console.log(current.name + " Ticket: " + current.ticket + " Wristband: " + band);
+}
+// Challenge 4: VIP Lounge Security
+for (let p of attendees) {
+  if (p.hasTicket === true && p.ticket === "VIP" && p.age > 18) {
+    console.log(p.name + " -> VIP LOUNGE APPROVED");
+  } else {
+    console.log(p.name + " -> VIP LOUNGE DENIED");
+  }
+}
+
+// Challenge 5: Find a Person in the Queue
+let searchName = "Zanele";
+for (let person of attendees) {
+  if (person.name == searchName) {
+    console.log("ATTENDEE FOUND");
+    console.log("Name: " + person.name);
+    console.log("Age: " + person.age);
+    console.log("Ticket: " + person.ticket);
+    console.log("Valid Ticket: " + person.hasTicket);
+    break;
+  }
+}
